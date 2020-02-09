@@ -2,18 +2,18 @@
 using namespace std;
 
 AcademicRecord::AcademicRecord() { 
-   Maths = 0;
-   Computers = 0;
-   Physics = 0;
+   maths_ = 0;
+   computers_ = 0;
+   physics_ = 0;
 }
 
-AcademicRecord::AcademicRecord(int m_math, int m_computers, int m_physics): Maths(m_math), Computers(m_computers), Physics(m_physics){
+AcademicRecord::AcademicRecord(int m_math, int m_computers, int m_physics): maths_(m_math), computers_(m_computers), physics_(m_physics){
 }
 
 AcademicRecord::AcademicRecord(const AcademicRecord &m){
-   Maths = m.Maths;
-   Computers = m.Computers;
-   Physics = m.Physics;
+   maths_ = m.GetMaths();
+   computers_ = m.GetComputers();
+   physics_ = m.GetPhysics();
 }
 
 void AcademicRecord::add(int &score, int i){
@@ -27,18 +27,18 @@ void AcademicRecord::add(int &score, int i){
 
 //++ prefix overload
 AcademicRecord AcademicRecord::operator++(){
-   AcademicRecord::add(Maths,10);
-   AcademicRecord::add(Computers,10);
-   AcademicRecord::add(Physics,10);
+   AcademicRecord::add(maths_,10);
+   AcademicRecord::add(computers_,10);
+   AcademicRecord::add(physics_,10);
    return *this;
 }
 
 //++ postfix overload
 AcademicRecord AcademicRecord::operator++(int){
    AcademicRecord temp = *this;
-   AcademicRecord::add(Maths,10);
-   AcademicRecord::add(Computers,10);
-   AcademicRecord::add(Physics,10);
+   AcademicRecord::add(maths_,10);
+   AcademicRecord::add(computers_,10);
+   AcademicRecord::add(physics_,10);
    return temp;
 }
 
@@ -53,46 +53,46 @@ void AcademicRecord::minus(int &score, int i){
 
 //-- prefix overload
 AcademicRecord AcademicRecord::operator--(){
-   AcademicRecord::minus(Maths,20);
-   AcademicRecord::minus(Computers,20);
-   AcademicRecord::minus(Physics,20);
+   AcademicRecord::minus(maths_,20);
+   AcademicRecord::minus(computers_,20);
+   AcademicRecord::minus(physics_,20);
    return *this;
 }
 
 //++ postfix overload
 AcademicRecord AcademicRecord::operator--(int){
    AcademicRecord temp = *this;
-   AcademicRecord::minus(Maths,20);
-   AcademicRecord::minus(Computers,20);
-   AcademicRecord::minus(Physics,20);
+   AcademicRecord::minus(maths_,20);
+   AcademicRecord::minus(computers_,20);
+   AcademicRecord::minus(physics_,20);
    return temp;
 }
 
 AcademicRecord AcademicRecord::operator+=(int i){
-   AcademicRecord::add(Maths,i);
-   AcademicRecord::add(Computers,i);
-   AcademicRecord::add(Physics,i);
+   AcademicRecord::add(maths_,i);
+   AcademicRecord::add(computers_,i);
+   AcademicRecord::add(physics_,i);
    return *this;
 }
 
 AcademicRecord AcademicRecord::operator-=(int i){
-   AcademicRecord::minus(Maths,i);
-   AcademicRecord::minus(Computers,i);
-   AcademicRecord::minus(Physics,i);
+   AcademicRecord::minus(maths_,i);
+   AcademicRecord::minus(computers_,i);
+   AcademicRecord::minus(physics_,i);
    return *this;
 }
 
-AcademicRecord AcademicRecord::operator==(const AcademicRecord &m){
-   if(m.Maths == Maths & m.Computers == Computers & m.Physics == Physics){
-      return *this;
+bool AcademicRecord::operator==(const AcademicRecord &m){
+   if(m.maths_ == maths_ & m.computers_ == computers_ & m.physics_ == physics_){
+      return 1;
    }
    else{
-      return *this;
+      return 0;
    }
 }
 
 void AcademicRecord::print(){
-   cout<<"maths: "<<Maths<<endl;
-   cout<<"Computers: "<<Computers<<endl;
-   cout<<"Physics: "<<Physics<<endl;
+   cout<<"maths: "<<maths_<<endl;
+   cout<<"Computers: "<<computers_<<endl;
+   cout<<"Physics: "<<physics_<<endl;
 }

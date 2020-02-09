@@ -5,9 +5,9 @@ using namespace std;
 int main()
 {
     AcademicRecord obj1, obj2;
-    obj1.Maths = 5;
-    obj1.Computers = 10;
-    obj1.Physics = 95;
+    obj1.SetMaths(5);
+    obj1.SetComputers(10);
+    obj1.SetPhysics(95);
 
     cout << "Value before incrementation ::"<<endl; 
     obj1.print();
