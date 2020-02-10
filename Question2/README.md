@@ -1,42 +1,27 @@
-# C++ Template for Bazel and Google Test
+# HW3-Q2
 
-> Can be used in Visual Studio Code
+## Description:
 
-You can use this template for most of your C++ projects without the need for changing the BUILD files.
+Given a vector of integers v, and a number sum, return a vector of two items which are the indices of the two numbers in v such that they add up to sum.
 
-## Installation
+- If there is no answer, the return vector should be empty.
 
-You can copy this using this command:
+- If there are multiple answers, return any of them.
 
-```bash
-git clone https://github.com/ourarash/cpp-template.git
-```
+Example 1:
 
-### Run main:
+Input v = [3, 7, 11, 15], sum = 10
 
-You can run this using `blaze`:
+output: [0, 1], sum=10 (because v[0] + v[1] = 10)
 
-```bash
-bazel run src/main:main
-```
+Example 2:
 
-### Run Tests:
+Input v = [3, 7, 11, 15], sum = 180, output: []
 
-You can run unit tests using [`blaze`](installing-bazel):
+Example 3:
 
-```bash
-bazel test tests:tests
-```
+Input v = [1, 4, 3, 2], sum = 5,
 
-## Directory Structure
+output: either [0, 1] OR [2, 3] is the correct answer.
 
-![Directory Structure](https://github.com/ourarash/cpp-template/blob/master/tree.png?raw=true | width = 100)
-
-## Installing Bazel
-
-This repo uses `Bazel` for building C++ files.
-You can install Bazel using this [link](https://docs.bazel.build/versions/master/install.html).
-
-### Credit
-
-This repo was inspired by [this post](https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/).
+Hint:​ Create a map that maps each number in v to its index.

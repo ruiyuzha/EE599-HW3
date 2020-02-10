@@ -3,6 +3,7 @@
 #include <iostream>
 using namespace std;
 
+//O(n^2)
 vector<int> Solution::Sum(vector<int> v,int sum) { 
   map<int,int> sumMap;
   vector<int> res;
@@ -28,6 +29,7 @@ vector<int> Solution::Sum(vector<int> v,int sum) {
   }
 }
 
+//O(n)
 void Solution::print_vector(vector<int> v){
     if(v.size()>0){
         cout<<"[";
