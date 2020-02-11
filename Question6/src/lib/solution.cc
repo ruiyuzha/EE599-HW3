@@ -2,11 +2,13 @@
 using namespace std;
 #include <iostream>
 
+//O(1)
 void Solution::InitialCurrentLocation(vector<int> v){
   v_=v;
   currentLocation = v_.begin();
 }
 
+//O(n)
 void Solution::print_vector(){
     if(v_.size()>0){
         cout<<"[";
@@ -21,6 +23,7 @@ void Solution::print_vector(){
     cout<<endl;
 }
 
+//O(1)
 void Solution::print_menu(){
   cout<<"*********************************************************************"<<endl;
   cout<<"*"<<endl;
@@ -38,18 +41,22 @@ void Solution::print_menu(){
   cout<<"*"<<endl;
 }
 
+//O(1)
 void Solution::FindFirstElem(){
   cout<<*v_.begin()<<endl;
 }
 
+//O(1)
 void Solution::FindLastElem(){
   cout<<*v_.rbegin()<<endl;
 }
 
+//O(1)
 void Solution::FindCurrentElem(){
   cout<<*currentLocation<<endl;
 }
 
+//O(1)
 void Solution::FindithElem(int i){
   if((currentLocation-v_.begin()+i)>v_.size()){
     cout<< "Sorry! You cannot traverse "<<i<<" elements from your current location."<<endl;
