@@ -1,42 +1,6 @@
-# C++ Template for Bazel and Google Test
+# HW3-Q3
 
-> Can be used in Visual Studio Code
+## Description
 
-You can use this template for most of your C++ projects without the need for changing the BUILD files.
+Implement the following class for a Linked List of integer values. All functions except for print() require a GTest.
 
-## Installation
-
-You can copy this using this command:
-
-```bash
-git clone https://github.com/ourarash/cpp-template.git
-```
-
-### Run main:
-
-You can run this using `blaze`:
-
-```bash
-bazel run src/main:main
-```
-
-### Run Tests:
-
-You can run unit tests using [`blaze`](installing-bazel):
-
-```bash
-bazel test tests:tests
-```
-
-## Directory Structure
-
-![Directory Structure](https://github.com/ourarash/cpp-template/blob/master/tree.png?raw=true | width = 100)
-
-## Installing Bazel
-
-This repo uses `Bazel` for building C++ files.
-You can install Bazel using this [link](https://docs.bazel.build/versions/master/install.html).
-
-### Credit
-
-This repo was inspired by [this post](https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/).
