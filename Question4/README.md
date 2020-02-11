@@ -1,42 +1,29 @@
-# C++ Template for Bazel and Google Test
+# HW3-Q4
 
-> Can be used in Visual Studio Code
+## Description
 
-You can use this template for most of your C++ projects without the need for changing the BUILD files.
+Given an expression string, find if the input has valid brackets (i.e. { } or [ ] or ( ) ).
 
-## Installation
+An input expression is valid if:
 
-You can copy this using this command:
+● Open brackets are closed by the same type of brackets.
 
-```bash
-git clone https://github.com/ourarash/cpp-template.git
-```
+● Open brackets must be closed in the correct order.
 
-### Run main:
+● An empty string is also considered valid.
 
-You can run this using `blaze`:
+You should ​only​ check for the validity of brackets based on the above rules, i.e. ‘(‘, ‘)’, ‘[‘, ‘]’, ‘{‘, ‘}’, not the rest of the expression.
 
-```bash
-bazel run src/main:main
-```
+Hint​: Iterate the input from beginning to end and use a ​std:stack​.
 
-### Run Tests:
+Example 1: Input: "(a+b)" Output: true
 
-You can run unit tests using [`blaze`](installing-bazel):
+Example 2:Input: "(a+b)[c*d]{5g+h}" Output: true
 
-```bash
-bazel test tests:tests
-```
+Example 3: Input: "(a+b]" Output: false
 
-## Directory Structure
+Example 4: Input: "(7h+[5c)+7]" Output: false
 
-![Directory Structure](https://github.com/ourarash/cpp-template/blob/master/tree.png?raw=true | width = 100)
+Example 5: Input: "{2k+[5j]}" Output: true
 
-## Installing Bazel
-
-This repo uses `Bazel` for building C++ files.
-You can install Bazel using this [link](https://docs.bazel.build/versions/master/install.html).
-
-### Credit
-
-This repo was inspired by [this post](https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/).
+Example 6: Input: "{2k++[5--*j]}" Output: true
