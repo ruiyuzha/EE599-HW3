@@ -1,42 +1,49 @@
-# C++ Template for Bazel and Google Test
+# HW3-Q5
 
-> Can be used in Visual Studio Code
+## Description
 
-You can use this template for most of your C++ projects without the need for changing the BUILD files.
+Write a class that stores a student’s academic record. The academic record should hold marks for the following subjects:
 
-## Installation
+1. Maths.
 
-You can copy this using this command:
+2. Computers. 
 
-```bash
-git clone https://github.com/ourarash/cpp-template.git
-```
+3. Physics.
 
-### Run main:
+Requirements:
 
-You can run this using `blaze`:
+● Implement the default constructor that initializes grades to 0.
 
-```bash
-bazel run src/main:main
-```
+● Implement a constructor that takes the initial grades as three parameters.
 
-### Run Tests:
+● Implement the copy constructor.
 
-You can run unit tests using [`blaze`](installing-bazel):
+● The class should support “++” and “--” operators (both postfix and prefix)
 
-```bash
-bazel test tests:tests
-```
+○ A “++” call should increase ​all​ marks of each subject by ​10​.
 
-## Directory Structure
+○ A “--” call should decrease ​all​ marks of each subject by ​20​.
 
-![Directory Structure](https://github.com/ourarash/cpp-template/blob/master/tree.png?raw=true | width = 100)
+● The class should support “+=” and “-=”, which affect all grades of the object.
 
-## Installing Bazel
+● The class should support “==” for comparison.
 
-This repo uses `Bazel` for building C++ files.
-You can install Bazel using this [link](https://docs.bazel.build/versions/master/install.html).
+● After any operation, marks for any subject should stay within the range of ​0 ​and ​100​:
 
-### Credit
+○ If after any operation, marks for any subject are exceeding 100 then your code should simply set the marks of that particular subject as 100.
 
-This repo was inspired by [this post](https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/).
+○ Similarly, if after any operation the mark of any subject below is 0 then your code should just set the marks of that particular subject to 0.
+
+● Print(), which returns a string that contains all marks and can later be used to print the marks.
+
+GTest​:
+
+Create an Object and write test cases for the following scenarios:
+
+● Check if the marks for all the subjects of the object do not go above 100 when performing increment(“++”) operation.
+
+● Check if the marks for all the subjects of the object do not go below 0 when performing decrement(“--”) operation.
+
+● For each operation mentioned in the question (--, ++, +-, -= ) check if the marks of each subject of the object are as expected after the operations are performed. You can check the example for reference.
+
+● Create an object of the class, say ​obj1​. Further, create another object, say ​obj2​ and copy the contents of ​obj1​ to ​obj2​ and check if the marks of all subjects in ​obj2​ are similar to respective subjects in ​obj1.
