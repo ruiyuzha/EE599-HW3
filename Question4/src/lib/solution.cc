@@ -3,6 +3,7 @@
 #include <iostream>
 using namespace std;
 
+//O(n)
 bool Solution::isValid(const string &input) { 
   stack<char> test;
   for (int i=0;i<input.size();i++){
@@ -22,6 +23,7 @@ bool Solution::isValid(const string &input) {
   return test.empty();
 }
 
+//O(1)
 void Solution::print_res(bool res){
   if (res==1){
     cout<<"True";
