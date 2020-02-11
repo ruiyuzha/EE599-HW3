@@ -1,42 +1,9 @@
-# C++ Template for Bazel and Google Test
+# HW3-Q6
 
-> Can be used in Visual Studio Code
+## Description:
 
-You can use this template for most of your C++ projects without the need for changing the BUILD files.
+Write a program that takes a vector as a parameter, prints it, and then depending upon the user input, it performs various operations on a vector using an iterator and iterator functions.
 
-## Installation
+● Your code should have a variable to track the ​current location​ which will be pointing at the first element of the vector as soon as you start execution of your code and changes as the program runs.
 
-You can copy this using this command:
-
-```bash
-git clone https://github.com/ourarash/cpp-template.git
-```
-
-### Run main:
-
-You can run this using `blaze`:
-
-```bash
-bazel run src/main:main
-```
-
-### Run Tests:
-
-You can run unit tests using [`blaze`](installing-bazel):
-
-```bash
-bazel test tests:tests
-```
-
-## Directory Structure
-
-![Directory Structure](https://github.com/ourarash/cpp-template/blob/master/tree.png?raw=true | width = 100)
-
-## Installing Bazel
-
-This repo uses `Bazel` for building C++ files.
-You can install Bazel using this [link](https://docs.bazel.build/versions/master/install.html).
-
-### Credit
-
-This repo was inspired by [this post](https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/).
+● You should print a menu to the user to perform the following operations:
